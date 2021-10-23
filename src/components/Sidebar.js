@@ -123,7 +123,7 @@ export default function Sidebar() {
               </li> */}
               <li className="px-4 rounded-lg mb-2 text-gray-700">
                 <a
-                  href="/#"
+                  href="/users"
                   rel="noreferrer"
                   className="flex items-center gap-4 text-sm font-light py-3"
                 >
