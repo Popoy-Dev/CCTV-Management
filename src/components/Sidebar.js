@@ -46,6 +46,16 @@ export default function Sidebar() {
                   Assets
                 </NavLink>
               </li>
+              <li className="rounded-lg mb-2">
+                <NavLink
+                  to="/users"
+                  className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
+                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                >
+                  <Icon name="account_circle" size="2xl" />
+                  Users/Teams
+                </NavLink>
+              </li>
 
               {/* <li className="rounded-lg mb-2 ">
                 <NavLink
@@ -121,16 +131,6 @@ export default function Sidebar() {
                   Profile Page
                 </a>
               </li> */}
-              <li className="px-4 rounded-lg mb-2 text-gray-700">
-                <a
-                  href="/users"
-                  rel="noreferrer"
-                  className="flex items-center gap-4 text-sm font-light py-3"
-                >
-                  <Icon name="account_circle" size="2xl" />
-                  Team / Users
-                </a>
-              </li>
             </ul>
           </div>
         </div>
