@@ -18,6 +18,7 @@ function App() {
           <Route exact path="/" component={Dashboard} />
           <Route exact path="/assets" component={Assets} />
           <Route exact path="/users" component={Users} />
+          <Redirect from="*" to="/" />
         </Switch>
         <Footer />
       </div>
