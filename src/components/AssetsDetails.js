@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Card from "@material-tailwind/react/Card";
 import CardBody from "@material-tailwind/react/CardBody";
 import CardHeader from "@material-tailwind/react/CardHeader";
+import Button from "@material-tailwind/react/Button";
+
 import { Avatar } from "antd";
 import {
   LineChart,
@@ -215,9 +217,61 @@ export default function AssetsDetails() {
                 </div>
               </div>
             </div>
-            <div className="mt-16 ml-6 mr-6 font-bold text-sm">
-              <small className="inline float-left ">Work Order History</small>
-              <small className="inline float-right  pb-8 ">Last 4 Weeks</small>
+            <div className="mt-16 ml-6 mr-6">
+              <div className="inline float-left ">
+                <small className="font-bold"> Monthly AID Maintenance</small>{" "}
+                <br />
+                <div className="my-3">
+                  <small>Requested by Mini Box</small>
+                </div>
+                <div className="text-green-500	">
+                  {" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <div className="inline float-right  pb-8 text-right	">
+                <small>
+                  <Avatar
+                    style={{
+                      backgroundColor: "lightBlue",
+                      verticalAlign: "middle",
+                    }}
+                    size="large"
+                  >
+                    {user}
+                  </Avatar>
+                </small>{" "}
+                <br />
+                <small>#1</small>
+                <small>
+                  {" "}
+                  <Button
+                    color="red"
+                    buttonType="filled"
+                    size="sm"
+                    rounded={false}
+                    block={false}
+                    iconOnly={false}
+                    ripple="light"
+                  >
+                    High
+                  </Button>
+                </small>
+              </div>
             </div>
           </div>
         </div>
