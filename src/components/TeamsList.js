@@ -1,16 +1,20 @@
+import Card from "@material-tailwind/react/Card";
+import CardHeader from "@material-tailwind/react/CardHeader";
+import CardBody from "@material-tailwind/react/CardBody";
 import { Table } from "antd";
+import { Breadcrumb } from "antd";
 
 export default function UsersList() {
   const columns = [
     {
-      title: "Full Name",
-      dataIndex: "fullname",
+      title: "Name",
+      dataIndex: "name",
       sorter: (a, b) => a.fullname.length - b.fullname.length,
       sortDirections: ["descend"],
     },
     {
-      title: "Role",
-      dataIndex: "role",
+      title: "Administrator",
+      dataIndex: "administrator",
       filters: [
         {
           text: "London",
@@ -24,23 +28,8 @@ export default function UsersList() {
       onFilter: (value, record) => record.address.indexOf(value) === 0,
     },
     {
-      title: "Teams",
-      dataIndex: "teams",
-      filters: [
-        {
-          text: "London",
-          value: "London",
-        },
-        {
-          text: "New York",
-          value: "New York",
-        },
-      ],
-      onFilter: (value, record) => record.address.indexOf(value) === 0,
-    },
-    {
-      title: "Last Visit",
-      dataIndex: "last_visit",
+      title: "Members",
+      dataIndex: "members",
       filters: [
         {
           text: "London",
@@ -58,31 +47,21 @@ export default function UsersList() {
   const data = [
     {
       key: "1",
-      fullname: "Sohn Brown",
-      role: "Full User",
-      teams: "Team B",
-      last_visit: "10/03/11",
+      name: "Team A",
+      administrator: "Mini Box",
+      members: "3 members",
     },
     {
       key: "2",
-      fullname: "Jim Green",
-      role: "Adminstration",
-      teams: "Team A",
-      last_visit: "10/03/11",
+      name: "Team F",
+      administrator: "CCTV Corp",
+      members: "6 members",
     },
     {
       key: "3",
-      fullname: "Joe Black",
-      role: "Adminstration",
-      teams: "Team B",
-      last_visit: "10/03/11",
-    },
-    {
-      key: "4",
-      fullname: "Jim Red",
-      role: "Adminstration",
-      teams: "Team A",
-      last_visit: "10/03/11",
+      name: "Team B",
+      administrator: "Techno Build",
+      members: "5 members",
     },
   ];
   const onChange = (pagination, filters, sorter, extra) => {

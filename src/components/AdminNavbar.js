@@ -1,15 +1,26 @@
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Button from "@material-tailwind/react/Button";
 import Icon from "@material-tailwind/react/Icon";
 import NavbarInput from "@material-tailwind/react/NavbarInput";
-import Image from "@material-tailwind/react/Image";
-import Dropdown from "@material-tailwind/react/Dropdown";
-import DropdownItem from "@material-tailwind/react/DropdownItem";
-import ProfilePicture from "assets/img/team-1-800x800.jpg";
 
 export default function AdminNavbar({ showSidebar, setShowSidebar }) {
   const location = useLocation().pathname;
+  const [buttonName, setButtonName] = useState("");
+  const buttonValue = () => {
+    const locationValue = location.replace("/", "");
+    if (locationValue === "") {
+      setButtonName("NEW WORK ORDER");
+    } else if (locationValue === "assets") {
+      setButtonName("NEW ASSETS");
+    } else if (locationValue === "users") {
+      setButtonName("Invite Users");
+    }
+  };
 
+  useEffect(() => {
+    buttonValue();
+  }, [location]);
   return (
     <nav className="bg-light-blue-500 md:ml-64 py-6 px-3">
       <div className="container max-w-full mx-auto flex items-center justify-between md:pr-8 md:pl-10">
@@ -64,7 +75,7 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
                   block={false}
                   iconOnly={false}
                 >
-                  New Work Order
+                  {buttonName}
                 </Button>
               </div>
             </div>

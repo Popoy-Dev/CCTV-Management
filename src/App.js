@@ -3,7 +3,6 @@ import Sidebar from "components/Sidebar";
 import Dashboard from "pages/Dashboard";
 import Assets from "pages/Assets";
 import Users from "pages/Users";
-import Maps from "pages/Maps";
 import Footer from "components/Footer";
 
 // Tailwind CSS Style Sheet
